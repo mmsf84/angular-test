@@ -1,0 +1,6 @@
+<div class="user-edit">
+  <h5 class="subtitle is-5">Editar Usuario</h5>
+  <app-user-form *ngIf="usuario"
+      [usuario]="usuario"
+      (handleSubmit)="handleSubmit($event)"></app-user-form>
+</div>

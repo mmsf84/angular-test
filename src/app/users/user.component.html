@@ -1,0 +1,8 @@
+<div style="text-align: center;">
+    <h5 class="subtitle is-5">Lista de Usuarios</h5>
+    <app-user-list
+        [users]="users"
+        (deleteUser)="deleteUser($event)"
+    ></app-user-list>
+    <a routerLink="/nuevo-user" class="button is-rounded is-outlined is-info">Crear Nuevo Usuario</a>
+</div>

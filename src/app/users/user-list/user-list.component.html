@@ -1,0 +1,30 @@
+<div class="container">
+  <div *ngIf="users.length; else empty">
+        <table class="table is-striped is-narrow">
+            <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>email</th>
+                <th>Role</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of users">
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.name }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.role }}</td>
+                    <td>{{ usuario.years }}</td>
+                    <td>
+                        <div class="field is-grouped">
+                            <button class="button is-small is-outlined is-info" (click)="handleUpdate(usuario.id)">Actualizar</button>
+                            <button class="button is-small is-outlined is-danger" (click)="handleDelete(usuario)">Eliminar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #empty><span style="color:blue;"> No existen usuarios</span></ng-template>
+</div>

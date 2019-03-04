@@ -1,0 +1,74 @@
+<div class="user-form container" *ngIf="usuario">
+  <form action="" #f="ngForm" autocomplete="off">
+      <div class="field" [class.is-invalid]="name.invalid && name.touched">
+          <label class="label">
+              {{ name.invalid && name.touched ? 'Ingresa un nombre válido' : 'Nombre:'}}
+          </label>
+          <div class="control">
+              <input
+                  name="name"
+                  class="input"
+                  [(ngModel)]="usuario.name"
+                  type="text"
+                  placeholder="Nombre"
+                  #name="ngModel"
+                  required
+              />
+          </div>
+      </div>      
+      <div class="field" [class.is-invalid]="role.invalid && role.touched">
+        <label class="label">
+            {{ role.invalid && role.touched ? 'Ingrese un rol válido' : 'Rol:'}}
+        </label>
+        <div class="control">
+            <input
+                name="role"
+                class="input"
+                [(ngModel)]="usuario.role"
+                type="text"
+                placeholder="Role"
+                #role="ngModel"
+                required
+            />
+        </div>
+      </div>    
+      <div class="field">
+          <label class="label">
+            {{ email.invalid && email.touched ? 'Ingrese un e-mail válido' : 'Email:'}}
+          </label>
+          <div class="control">
+              <input
+                  name="email"
+                  class="input"
+                  [(ngModel)]="usuario.email"
+                  type="text"
+                  #email="ngModel"
+                  placeholder="Email"
+                  required
+              />
+          </div>
+      </div>
+      <div class="field">
+        <label class="label">
+            {{ edad.invalid && edad.touched ? 'Ingrese una edad válida' : 'Edad:'}}
+        </label>
+        <div class="control">
+            <input
+                name="edad"
+                class="input"
+                [(ngModel)]="usuario.years"
+                type="text"
+                #edad="ngModel"
+                placeholder="Edad"
+                required
+            />
+        </div>
+      </div>      
+      <div class="field">
+          <div class="control">
+              <button class="button is-link" (click)="onSubmit(f)" [disabled]="f.invalid">Guardar</button>
+          </div>
+      </div>
+
+  </form>
+</div>
